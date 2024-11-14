@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Display</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .navbar-brand:hover {
+            color: #007bff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+        }
+
+        .card {
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .description-text {
+            font-size: 1.1rem;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+
+        .icons i:hover {
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .like-count {
+            margin-left: 5px;
+            font-size: 1rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="api.html">Raymond Husena</a>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <h1>Image Display</h1>
+
+
+        <div class="card" style="width: 18rem; margin: auto;">
+            <img src="" class="card-img-top" alt="Selected Image" id="card-image">
+        </div>
+
+
+        <div class="icons">
+            <i class="fas fa-heart"></i><span class="like-count" id="like-count"></span>
+            <i class="fas fa-comment"></i><span class="like-count" id="comment-count"></span>
+        </div>
+
+
+        <p class="description-text" id="description-text"></p>
+    </div>
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const imageUrl = urlParams.get('imageUrl');
+        const description = urlParams.get('description');
+
+
+        if (imageUrl && description) {
+            document.getElementById('card-image').src = decodeURIComponent(imageUrl);
+            document.getElementById('description-text').textContent = decodeURIComponent(description);
+        }
+
+
+        const randomLikes = Math.floor(Math.random() * 500) + 1;
+        const randomComments = Math.floor(Math.random() * 200) + 1;
+
+
+        document.getElementById('like-count').textContent = randomLikes;
+        document.getElementById('comment-count').textContent = randomComments;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
