@@ -1,124 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Image Display</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .navbar {
-            background-color: #343a40;
-        }
-
-        .navbar-brand {
-            color: #ffffff;
-            font-weight: bold;
-        }
-
-        .navbar-brand:hover {
-            color: #007bff;
+            background-color: #1c1c1c;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
         }
 
         .container {
-            max-width: 960px;
-            margin: auto;
+            margin-top: 40px;
+            text-align: center;
         }
 
-        .card {
+        h1,
+        h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+
+        img {
+            max-width: 300px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .champion-stats {
+            background: linear-gradient(145deg, #242424, #1a1a1a);
+            padding: 25px;
+            border-radius: 15px;
             margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .description-text {
+        .champion-stats p {
             font-size: 1.1rem;
-            color: #333;
-            margin-top: 20px;
+            margin: 10px 0;
+            color: #dcdcdc;
         }
 
-        .icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
+        .champion-stats strong {
+            color: #ffcc00;
+        }
+
+        .back-btn {
+            margin-top: 30px;
             font-size: 1.2rem;
-            color: #6c757d;
+            font-weight: 600;
+            text-transform: uppercase;
+            background-color: #ff6f61;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(255, 111, 97, 0.6);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .icons i:hover {
-            color: #007bff;
-            cursor: pointer;
-        }
-
-        .like-count {
-            margin-left: 5px;
-            font-size: 1rem;
-            vertical-align: middle;
+        .back-btn:hover {
+            background-color: #ff3b28;
+            box-shadow: 0 6px 15px rgba(255, 59, 40, 0.8);
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="champion-details">
+            <h1 id="champion-name"></h1>
+            <h3 id="champion-title"></h3>
+            <img id="champion-img" src="" alt="Champion Image">
 
-    <nav class="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="api.html">Raymond Husena</a>
+
+
+            <div id="champion-stats" class="champion-stats">
+                <p><strong>Health:</strong> <span id="champion-health"></span></p>
+                <p><strong>Attack Damage:</strong> <span id="champion-attack-damage"></span></p>
+                <p><strong>Armor:</strong> <span id="champion-armor"></span></p>
+                <p><strong>Magic Resist:</strong> <span id="champion-magic-resist"></span></p>
+            </div>
+
+            <a href="api.html" class="btn back-btn">Back to Gallery</a>
         </div>
-    </nav>
-
-    <div class="container mt-5 text-center">
-        <h1>Image Display</h1>
-
-
-        <div class="card" style="width: 18rem; margin: auto;">
-            <img src="" class="card-img-top" alt="Selected Image" id="card-image">
-        </div>
-
-
-        <div class="icons">
-            <i class="fas fa-heart"></i><span class="like-count" id="like-count"></span>
-            <i class="fas fa-comment"></i><span class="like-count" id="comment-count"></span>
-        </div>
-
-
-        <p class="description-text" id="description-text"></p>
     </div>
 
     <script>
+        const CHAMPION_LIST_URL = 'https://ddragon.leagueoflegends.com/cdn/14.22.1/data/en_US/champion.json';
+        const IMAGE_BASE_URL = 'https://ddragon.leagueoflegends.com/cdn/14.22.1/img/champion/';
+        const championName = new URLSearchParams(window.location.search).get('champion');
+        const championNameFormatted = championName.charAt(0).toUpperCase() + championName.slice(1);
+        const championTitle = document.getElementById('champion-name');
+        const championTitleText = document.getElementById('champion-title');
+        const championImg = document.getElementById('champion-img');
+        const championLore = document.getElementById('champion-lore');
+        const championHealth = document.getElementById('champion-health');
+        const championAttackDamage = document.getElementById('champion-attack-damage');
+        const championArmor = document.getElementById('champion-armor');
+        const championMagicResist = document.getElementById('champion-magic-resist');
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const imageUrl = urlParams.get('imageUrl');
-        const description = urlParams.get('description');
+        async function fetchChampionDetails() {
+            try {
+
+                const response = await fetch(CHAMPION_LIST_URL);
+                const data = await response.json();
+                const champion = data.data[championNameFormatted];
+
+                if (champion) {
+                    championTitle.innerText = champion.name;
+                    championTitleText.innerText = champion.title;
+                    championImg.src = `${IMAGE_BASE_URL}${champion.image.full}`;
 
 
-        if (imageUrl && description) {
-            document.getElementById('card-image').src = decodeURIComponent(imageUrl);
-            document.getElementById('description-text').textContent = decodeURIComponent(description);
+                    const stats = champion.stats;
+                    championHealth.innerText = stats.hp;
+                    championAttackDamage.innerText = stats.attackdamage;
+                    championArmor.innerText = stats.armor;
+                    championMagicResist.innerText = stats.spellblock;
+                } else {
+                    championTitle.innerText = 'Champion not found';
+                }
+            } catch (error) {
+                console.error('Error fetching champion data:', error);
+            }
         }
 
-
-        const randomLikes = Math.floor(Math.random() * 500) + 1;
-        const randomComments = Math.floor(Math.random() * 200) + 1;
-
-
-        document.getElementById('like-count').textContent = randomLikes;
-        document.getElementById('comment-count').textContent = randomComments;
+        fetchChampionDetails();
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
