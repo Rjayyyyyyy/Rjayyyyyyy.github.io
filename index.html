@@ -124,6 +124,38 @@
             border-color: rgb(120, 85, 178);
         }
 
+        @media (max-width: 390px) {
+            .home-text {
+                margin-top: 100px;
+                font-size: 14px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .home-text h1 {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
+
+            .home-text h4 {
+                font-size: 1.2rem;
+            }
+
+            .home-image {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .home-image img {
+                border-radius: 50%;
+            }
+
+            .btn-primary {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+        }
+
         /* About Section Styling */
         #about h2 {
             text-align: center;
@@ -469,13 +501,17 @@
 
     <!-- Home Section -->
     <section id="home">
-        <div class="home-text">
-            <h4>UI/UX Designer</h4>
-            <h1>Hi, I'm <span>Raymond Husena</span><br>from the Philippines</h1>
-            <a href="#contact" class="btn btn-primary">Contact Me</a>
-        </div>
-        <div class="home-image">
-            <img src="https://i.ibb.co/ZzDdsbR/Me.png " style="border: none ;" alt="Raymond Husena">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 home-text">
+                    <h4>UI/UX Designer</h4>
+                    <h1>Hi, I'm <span>Raymond Husena</span><br>from the Philippines</h1>
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                </div>
+                <div class="col-md-6 home-image text-center">
+                    <img src="https://i.ibb.co/ZzDdsbR/Me.png" style="border: none;" alt="Raymond Husena">
+                </div>
+            </div>
         </div>
     </section>
 
