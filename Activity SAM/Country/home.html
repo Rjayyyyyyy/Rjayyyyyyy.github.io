@@ -8,8 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-         body {
+        body {
             font-family: 'Roboto', sans-serif;
             background-color: #f8f9fa;
         }
@@ -23,27 +24,17 @@
             font-weight: 700;
         }
 
-        .btn-signIn {
-            background-color: rgb(227, 172, 77);
-            border: none;
-            transition: background-color 0.3s;
-        }
-
-        .btn-signUp {
-            background: transparent;
-            border: 2px solid rgb(227, 172, 77);
-            color: rgb(227, 172, 77);
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .btn-signIn:hover {
-            background-color: rgb(244, 146, 0);
-            color: white;
-        }
-
-        .btn-signUp:hover {
-            background-color: rgb(244, 146, 0);
-            color: white;
+        /* Home styleeee */
+        .home {
+            min-height: 100vh;
+            background-image: url('https://i.ibb.co/8XpGjKx/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            color: rgb(0, 0, 0);
+            padding-top: 70px;
         }
 
         .first-content span {
@@ -75,17 +66,6 @@
             z-index: -1;
         }
 
-        @media (max-width: 768px) {
-            .first-content {
-                font-size: 40px;
-            }
-
-            .image-container {
-                width: 80%;
-                max-width: none;
-            }
-        }
-
         .btn-visit {
             color: var(--contrast-color);
             background: var(--accent-color);
@@ -97,107 +77,98 @@
             padding: 10px 28px 12px 28px;
             border-radius: 50px;
             transition: 0.5s;
-            background-color: #f6d78b;
+            background-color: #fac745;
+            text-decoration: none;
         }
 
         .btn-visit:hover {
-            background-color: #feb705;
+            background-color: #ffb300;
         }
 
-        .about-section {
-            padding: 100px 0;
-            background-color: #f8f9fa;
-            color: #333;
+        @media (max-width: 768px) {
+            .first-content {
+                font-size: 40px;
+            }
+
+            .image-container {
+                width: 80%;
+                max-width: none;
+            }
         }
 
-        .contact-section {
-            padding: 100px 0;
-            background-color: white;
-            color: #333;
+        /* Destination styleeee */
+        #destination {
+            background-color: #f1eaea;
         }
 
-        .card img {
-            height: 200px;
-            object-fit: cover;
+        .content-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
         }
 
         .card {
+            position: relative;
             border: none;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+        }
 
+        .card img {
+            height: 300px;
+            object-fit: cover;
         }
 
         .card-body {
             text-align: center;
-            padding: 15px;
+            padding: 20px;
         }
 
         .card-body h5 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
-
-        .row-cols-lg-5 {
-            --bs-gutter-x: 1.5rem;
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
         }
 
-        .home {
-            min-height: 100vh;
-            background-image: url('https://i.ibb.co/8XpGjKx/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            position: relative;
-            color: rgb(0, 0, 0);
-            padding-top: 70px;
-
+        .card:hover .overlay {
+            opacity: 1;
         }
 
-
-
-        .content-wrapper h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
+        .overlay a {
+            color: #fff;
+            font-size: 2rem;
+            text-decoration: none;
         }
 
-        .content-wrapper p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-
+        .row-cols-md-3 {
+            --bs-gutter-x: 2rem;
         }
 
-        .explore-btn {
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            background-color: #bf9a69;
-            border: none;
-            color: rgb(18, 16, 16);
-            transition: background-color 0.3s;
-        }
-
-        .explore-btn:hover {
-            background-color: #d48c43;
-
-            cursor: pointer;
-        }
-
+        /* About styleeee */
         .about-section {
-            background-color: #f5f5f5;
+            padding: 100px 0;
+            background-color: #e2dede;
             color: #333;
         }
 
@@ -218,10 +189,45 @@
             line-height: 1.8;
         }
 
-        .btn-outline-success:hover {
-    background-color: #D2B48C;
-    color: white;
-}
+        #about img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 40%;
+            height: auto;
+        }
+
+        /* Contact styleeee */
+        #contact {
+            background-color: #d4d4d4;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact h2 {
+            color: #000000;
+        }
+
+        #contact p {
+            color: #555;
+        }
+
+        #contact .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        #contact img {
+            transition: transform 0.3s ease;
+        }
+
+        #contact img:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
@@ -244,71 +250,93 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
                 </ul>
-                
+
             </div>
         </div>
     </nav>
 
     <!-- Main Content Section -->
-     <section id="home">
-    <div class="container-content pt-5 mt-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <h1 class="first-content">LET'S GO!<br />THE <span>ADVENTURE</span><br> IS WAITING FOR YOU</h1>
-                    <p>Explore <span>The beauty of the Philippines</span> on Your Journey Today and Discover Uncharted Wonders Around the World. Your Adventure
-                        Awaits with Exciting Experiences, Unforgettable Memories, and Endless Opportunities.</p>
-                    <a href="homepage.html" class="btn-visit" style="border-radius: 10px 10px; font-size: 25px;">Get Started</a>
-                </div>
-                <div class="col-md-6 d-flex justify-content-center">
-                    <div class="image-container">
-                        <img src="https://i.ibb.co/8zfjZ46/men-dressed-travel-wearing-glasses-hats-carrying-bags-luggage-removebg-preview.png"
-                            alt="Adventure Image" class="img-fluid">
-                        <img src="https://i.ibb.co/p1f0mRg/header-bg-1.png" alt="Overlay Image" class="overlay-image">
+    <section id="home">
+        <div class="container-content pt-5 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <h1 class="first-content">LET'S GO!<br />THE <span>ADVENTURE</span><br> IS WAITING FOR YOU</h1>
+                        <p>Explore <span>The beauty of the Philippines</span> on Your Journey Today and Discover
+                            Uncharted Wonders Around the World. Your Adventure
+                            Awaits with Exciting Experiences, Unforgettable Memories, and Endless Opportunities.</p>
+                        <a href="https://youtu.be/qi52KQs67MY?si=ej8AT2UdhjFxyDcB" class="btn-visit" style="border-radius: 10px 10px; font-size: 25px;">Get
+                            Started</a>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center">
+                        <div class="image-container">
+                            <img src="https://i.ibb.co/8zfjZ46/men-dressed-travel-wearing-glasses-hats-carrying-bags-luggage-removebg-preview.png"
+                                alt="Adventure Image" class="img-fluid">
+                            <img src="https://i.ibb.co/p1f0mRg/header-bg-1.png" alt="Overlay Image"
+                                class="overlay-image">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Destination Section -->
     <section id="destination" class="content-section">
         <div class="container">
             <h2 class="text-center">Top Destinations</h2>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 mt-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-4">
+                <!-- Card Example -->
                 <div class="col">
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/c6/b8/f7/c6b8f7dd12d783bf1fec6997dc3bcdfe.jpg"
                             class="card-img-top" alt="Siargao">
+                        <div class="overlay">
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalSiargao"></a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Siargao Island</h5>
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/6b/97/74/6b9774920b37a1d25b75df66c8794dbb.jpg"
                             class="card-img-top" alt="Boracay">
+                        <div class="overlay">
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalBoracay"></a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Boracay Island</h5>
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/27/8b/94/278b94203294f8eb10fa5db7aa888861.jpg"
                             class="card-img-top" alt="Palawan">
+                        <div class="overlay">
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalPalawan"></a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Palawan</h5>
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/df/51/29/df5129c0264a0de38e7811f07a27aefe.jpg"
                             class="card-img-top" alt="Cebu">
+                        <div class="overlay">
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalCebu"></a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Cebu</h5>
                         </div>
@@ -319,113 +347,386 @@
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/c5/c6/df/c5c6df651d196c60863ac76624986792.jpg"
                             class="card-img-top" alt="Banaue Rice Terraces">
+                        <div class="overlay">
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalBanaue"></a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Banaue Rice Terraces</h5>
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/c0/de/3f/c0de3f0530f37ff696c09312e162e430.jpg"
                             class="card-img-top" alt="Chocolate Hills">
+                        <div class="overlay">
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalChocolate"></a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Chocolate Hills</h5>
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/81/53/a2/8153a247ee898a19c660316ed92b4ca6.jpg"
                             class="card-img-top" alt="Vigan">
+                        <div class="overlay">
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalVigan"></a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Vigan</h5>
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/7a/8e/ee/7a8eee3d6d6d0ba61b11580094c90a3e.jpg"
                             class="card-img-top" alt="Mayon Volcano">
+                        <div class="overlay">
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalMayon"></a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Mayon Volcano</h5>
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/57/b7/57/57b75708935d42726c1fc8dfafc21444.jpg"
                             class="card-img-top" alt="Tubbataha Reefs Natural Park">
+                        <div class="overlay">
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalTubbataha"></a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Tubbataha Reefs Natural Park</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col">
+
+                <div class="col-md-12 d-flex justify-content-center">
                     <div class="card">
                         <img src="https://i.pinimg.com/564x/1e/83/51/1e8351994314ca881925950d8eaf8d30.jpg"
                             class="card-img-top" alt="Intramuros">
+                        <div class="overlay">
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal"
+                                data-bs-target="#modalIntramuros"></a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">Intramuros</h5>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
+
+    <!-- Modals for All Destinations -->
+    <!-- Siargao -->
+    <div class="modal fade" id="modalSiargao" tabindex="-1" aria-labelledby="modalSiargaoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSiargaoLabel">Siargao Island</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.pinimg.com/564x/c6/b8/f7/c6b8f7dd12d783bf1fec6997dc3bcdfe.jpg"
+                        class="img-fluid mb-3" alt="Siargao">
+                    <p>Siargao Island is known as the Surfing Capital of the Philippines, boasting pristine beaches,
+                        crystal-clear waters, and lush palm forests. Perfect for surfing enthusiasts and nature lovers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Boracay -->
+    <div class="modal fade" id="modalBoracay" tabindex="-1" aria-labelledby="modalBoracayLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalBoracayLabel">Boracay Island</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.pinimg.com/564x/6b/97/74/6b9774920b37a1d25b75df66c8794dbb.jpg"
+                        class="img-fluid mb-3" alt="Boracay">
+                    <p>Boracay is famous for its White Beach, vibrant nightlife, and water activities like parasailing
+                        and snorkeling. It’s a must-visit tropical paradise!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Palawan -->
+    <div class="modal fade" id="modalPalawan" tabindex="-1" aria-labelledby="modalPalawanLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPalawanLabel">Palawan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.pinimg.com/564x/27/8b/94/278b94203294f8eb10fa5db7aa888861.jpg"
+                        class="img-fluid mb-3" alt="Palawan">
+                    <p>Palawan is home to the Puerto Princesa Underground River, limestone cliffs, and emerald-green
+                        lagoons. A true haven for eco-tourism!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cebu -->
+    <div class="modal fade" id="modalCebu" tabindex="-1" aria-labelledby="modalCebuLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCebuLabel">Cebu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.pinimg.com/564x/df/51/29/df5129c0264a0de38e7811f07a27aefe.jpg"
+                        class="img-fluid mb-3" alt="Cebu">
+                    <p>Cebu offers a mix of historical landmarks like Magellan’s Cross and stunning natural wonders such
+                        as Kawasan Falls and Oslob whale sharks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banaue Rice Terraces -->
+    <div class="modal fade" id="modalBanaue" tabindex="-1" aria-labelledby="modalBanaueLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalBanaueLabel">Banaue Rice Terraces</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.pinimg.com/564x/c5/c6/df/c5c6df651d196c60863ac76624986792.jpg"
+                        class="img-fluid mb-3" alt="Banaue Rice Terraces">
+                    <p>The Banaue Rice Terraces are a UNESCO World Heritage Site, handcrafted by the Ifugao people over
+                        2,000 years ago. A breathtaking agricultural marvel!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chocolate Hills -->
+    <div class="modal fade" id="modalChocolate" tabindex="-1" aria-labelledby="modalChocolateLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalChocolateLabel">Chocolate Hills</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.pinimg.com/564x/c0/de/3f/c0de3f0530f37ff696c09312e162e430.jpg"
+                        class="img-fluid mb-3" alt="Chocolate Hills">
+                    <p>The Chocolate Hills are a unique geological formation of over 1,200 hills that turn brown in the
+                        dry season, resembling chocolate mounds.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vigan -->
+    <div class="modal fade" id="modalVigan" tabindex="-1" aria-labelledby="modalViganLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalViganLabel">Vigan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.pinimg.com/564x/81/53/a2/8153a247ee898a19c660316ed92b4ca6.jpg"
+                        class="img-fluid mb-3" alt="Vigan">
+                    <p>Vigan is a charming colonial town with cobblestone streets, Spanish-style houses, and the famous
+                        Calle Crisologo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mayon Volcano -->
+    <div class="modal fade" id="modalMayon" tabindex="-1" aria-labelledby="modalMayonLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalMayonLabel">Mayon Volcano</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.pinimg.com/564x/7a/8e/ee/7a8eee3d6d6d0ba61b11580094c90a3e.jpg"
+                        class="img-fluid mb-3" alt="Mayon Volcano">
+                    <p>Known for its perfect cone shape, Mayon Volcano is a majestic natural wonder and a popular hiking
+                        destination.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tubbataha Reefs Natural Park -->
+    <div class="modal fade" id="modalTubbataha" tabindex="-1" aria-labelledby="modalTubbatahaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTubbatahaLabel">Tubbataha Reefs Natural Park</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.pinimg.com/564x/57/b7/57/57b75708935d42726c1fc8dfafc21444.jpg"
+                        class="img-fluid mb-3" alt="Tubbataha">
+                    <p>A UNESCO World Heritage Site, Tubbataha Reefs is a diver’s paradise featuring a vibrant marine
+                        ecosystem and stunning coral formations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- About Section -->
-    <section id="about" class="about-section py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">About</h2>
-            <p class="text-center intro-text mb-5">
-                Learn more about the rich culture and history of the Philippines.
+    <section id="about" class="about-section">
+        <div class="container ">
+            <h2 class="text-center mb-4 title-style">About</h2>
+            <p class="text-center mb-5 title-font">
+                Discover the Philippines, a land of vibrant culture, stunning landscapes, and rich history.
             </p>
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10">
+
+            <!-- Row 1 -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
                     <h3>About the Philippines</h3>
                     <p>The Philippines is a beautiful archipelago in Southeast Asia, consisting of more than 7,000
-                        islands. Its unique blend of natural beauty, history, and culture make it a destination like no
-                        other. From the bustling capital city of Manila to the serene beaches of Palawan, the
-                        Philippines offers something for every traveler.</p>
+                        islands. From the bustling capital city of Manila to the serene beaches of Palawan, the country
+                        offers something for every traveler.</p>
+                    <a href="https://taasnoopilipino.com/7000-islands-and-counting-exploring-the-philippine-archipelago/" class="btn btn-primary mt-3">Learn More</a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://i.pinimg.com/736x/13/7e/db/137edbd33093c175e5ec0faf841be2d4.jpg" alt="Philippines"
+                        class="img-fluid philippines-img">
+                </div>
+            </div>
 
+            <!-- Row 2 -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
                     <h3>Nature and Destinations</h3>
                     <p>The country's landscapes are as diverse as its people. Visitors can explore the powdery white
                         sands of Boracay, the underground river in Puerto Princesa, and the stunning Banaue Rice
-                        Terraces, a UNESCO World Heritage Site. For those who love the outdoors, the Philippines also
-                        offers lush mountains, vibrant coral reefs, and active volcanoes like Mayon.</p>
+                        Terraces, a UNESCO World Heritage Site.</p>
+                    <a href="https://mytourguide.ph/philippine-destinations/top-natural-wonders-philippines/" class="btn btn-primary mt-3">Learn More</a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://i.pinimg.com/736x/9c/42/0e/9c420efcc92b8318c78e5083f647e0fa.jpg" alt="Nature"
+                        class="img-fluid nature-img">
+                </div>
+            </div>
 
+            <!-- Row 3 -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
                     <h3>Rich Cultural Heritage</h3>
-                    <p>The Philippines' culture is a fascinating blend of indigenous traditions and foreign influences,
-                        shaped by centuries of interactions with other cultures. Having been colonized by Spain for over
-                        300 years, then by the United States, the country's heritage is a fusion of Western and Eastern
-                        customs.</p>
+                    <p>Experience a fascinating blend of indigenous traditions and foreign influences that define the
+                        Philippines' unique cultural identity.</p>
+                    <a href="https://www.re-thinkingthefuture.com/articles/intangible-cultural-heritage-of-the-philippines/" class="btn btn-primary mt-3">Learn More</a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://i.pinimg.com/736x/b9/7b/e0/b97be01bf0243804704d0faef5a12983.jpg"
+                        alt="Cultural Heritage" class="img-fluid cultural-img">
+                </div>
+            </div>
 
+            <!-- Row 4 -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
                     <h3>Filipino Values and Traditions</h3>
                     <p>Bayanihan, or the spirit of communal unity and cooperation, is an important Filipino value. This
                         tradition is still alive today in small towns, where communities come together to help one
                         another in times of need.</p>
+                    <a href="https://jefmenguin.com/filipino-values/" class="btn btn-primary mt-3">Learn More</a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://i.pinimg.com/736x/3a/1c/50/3a1c50d33e4bbbde4edb64759975bee2.jpg"
+                        alt="Filipino Values" class="img-fluid values-img">
+                </div>
+            </div>
 
+            <!-- Row 5 -->
+            <div class="row align-items-center">
+                <div class="col-md-6">
                     <h3>Language and Arts</h3>
                     <p>The Philippines is a multilingual country with Filipino and English as its official languages.
                         Traditional art forms such as weaving, wood carving, and pottery remain part of the country’s
-                        cultural identity, while modern Filipino artists continue to make their mark globally in music,
-                        film, and visual arts.</p>
+                        cultural identity.</p>
+                    <a href="https://en.wikipedia.org/wiki/Languages_of_the_Philippines" class="btn btn-primary mt-3">Learn More</a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://i.pinimg.com/736x/25/13/88/2513886118fbbcca5bedbb40d69ed9b4.jpg"
+                        alt="Language and Arts" class="img-fluid arts-img">
                 </div>
             </div>
         </div>
     </section>
-    
-    
-    
 
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <p class="text-center mb-5">We'd love to hear from you! Whether you have questions or want to share your
+                travel experiences, get in touch with us.</p>
+            <div class="row">
 
- <!-- Footer -->
- <footer class="text-center py-4" style="background-color: rgba(102, 99, 99, 0.8); color: white;">
-    <p>&copy; 2024 Philippines Tour. All rights reserved.</p>
-    <a href="#" class="text-white">Privacy Policy</a> | 
-    <a href="#" class="text-white">Terms of Service</a>
-</footer>
+                <!-- Contact Form -->
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Write your message here"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="col-md-6 text-center">
+                    <h4>Connect with us</h4>
+                    <p>Follow us on our social media channels for updates and travel inspiration!</p>
+                    <div>
+                        <a href="https://facebook.com" target="_blank" class="me-3">
+                            <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook" />
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="me-3">
+                            <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram" />
+                        </a>
+                        <a href="https://twitter.com" target="_blank">
+                            <img src="https://img.icons8.com/color/48/twitter--v1.png" alt="Twitter" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4" style="background-color: rgba(102, 99, 99, 0.8); color: white;">
+        <p>&copy; 2024 Philippines Tour. All rights reserved.</p>
+        <a href="#" class="text-white">Privacy Policy</a> |
+        <a href="#" class="text-white">Terms of Service</a>
+    </footer>
 
 
     <script>
