@@ -168,6 +168,7 @@
             border: none;
             background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
         }
 
         #about img {
@@ -246,6 +247,57 @@
             display: block;
         }
 
+        /*PROJECT STYLE*/
+
+        #projct .card {
+            height: 550px;
+
+        }
+
+        #project .card-img-top {
+            height: 450px;
+
+            object-fit: cover;
+
+        }
+
+        #project .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .icon-link {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .card-title,
+        .card-text {
+            text-align: center;
+        }
+
+        /*skill section */
         .skills-section {
             padding: 50px 20px;
         }
@@ -314,54 +366,7 @@
 
         }
 
-        #projct .card {
-            height: 550px;
-
-        }
-
-        #project .card-img-top {
-            height: 450px;
-
-            object-fit: cover;
-
-        }
-
-        #project .card-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-        }
-
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .card:hover .overlay {
-            opacity: 1;
-        }
-
-        .icon-link {
-            font-size: 2rem;
-            color: white;
-        }
-
-        .card-title,
-        .card-text {
-            text-align: center;
-        }
-
+        /* Contact Section */
         #contact {
             padding: 50px 0;
             background: #ffffff;
@@ -371,6 +376,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            gap: 30px;
+
         }
 
         .contact-left {
@@ -449,7 +456,9 @@
             color: #000000;
         }
 
+        /* Footer Section */
         footer {
+            width: 100%;
             background-color: #808080;
             color: #fff;
             padding: 20px 0;
@@ -465,6 +474,39 @@
 
         footer p {
             margin: 10px 0;
+        }
+
+
+        @media (max-width: 768px) {
+
+            .contact-left,
+            .contact-right {
+                flex-basis: 100%;
+                text-align: center;
+            }
+
+            .contact-left p {
+                font-size: 16px;
+            }
+
+            .social-icons {
+                text-align: center;
+            }
+
+            .social-icons a {
+                margin-right: 10px;
+            }
+
+            .contact-right form input,
+            .contact-right form textarea {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            .contact-right form button {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
         }
     </style>
 </head>
@@ -515,125 +557,74 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="mb-5">
+    <section id="about" class="mb-5 py-5 mt-5">
         <div class="container">
-            <h2 class="text-center">About Me</h2>
-            <div class="d-flex justify-content-center">
-                <div class="card mb-3" style="max-width: 1000px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="https://i.ibb.co/N2BSJnr/me2-removebg-preview.png" alt="raymond-2"
-                                class="img-fluid rounded-start">
-                            <p class="m-2">Name: Raymond Husena</p>
-                            <p class="m-2">Age: 22</p>
-                            <p class="m-2">Address: Kalye, Kantuhan</p>
-                            <p class="m-2">Email: h.raymondhusena@gmail.com</p>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Raymond Husena</h5>
-                                <p class="card-text">
-                                    Hi, I'm Raymond Husena, a passionate and creative UI/UX Designer based in the
-                                    Philippines. With a keen eye for detail and a deep understanding of user-centered
-                                    design principles, I specialize in creating intuitive and visually appealing web and
-                                    mobile interfaces.
-                                    <br><br>
-                                    Throughout my career, I've had the opportunity to work on a diverse range of
-                                    projects, from small startups to large enterprises. I thrive on the challenge of
-                                    transforming ideas into reality.
-                                    <br><br>
-                                    I am proficient in HTML, CSS, JavaScript, and various design tools, enabling me to
-                                    create fully responsive and interactive designs.
-                                    <br><br>
-                                    If you're looking for a dedicated and versatile designer, let's create something
-                                    amazing together!
-                                </p>
-                                <div class="tab-titles">
-                                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                                    <p class="tab-links" onclick="opentab('education')">Education</p>
-                                </div>
-
-                                <div class="tab-contents active-tab" id="skills">
-                                    <ul>
-                                        <li><span>&#10003;</span> User Interface (UI) Design</li>
-                                        <li><span>&#10003;</span> User Experience (UX) Design</li>
-                                        <li><span>&#10003;</span> Prototyping and Wireframing</li>
-                                        <li><span>&#10003;</span> Usability Testing</li>
-                                    </ul>
-                                </div>
-
-                                <div class="tab-contents" id="experience">
-                                    <ul>
-                                        <li><span>&#10003;</span> UI/UX Designer at Company Apple Inc. </li>
-                                        <li><span>&#10003;</span> Front-End Developer at Company Amazon Web Services
-                                            (AWS) </li>
-                                        <li><span>&#10003;</span> Freelance Designer at Upwork</li>
-                                    </ul>
-                                </div>
-
-                                <div class="tab-contents" id="education">
-                                    <ul>
-                                        <li><span>&#10003;</span> Bachelor's Degree in Information Technology</li>
-                                        <li><span>&#10003;</span> Certification in UI/UX Design</li>
-                                        <li><span>&#10003;</span> Courses in Web Development and Graphic Design</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="text-center mb-4">About Me</h2>
+            <div class="row justify-content-center">
+                <!-- Profile Image and Info -->
+                <div class="col-md-4 text-center">
+                    <img src="https://i.ibb.co/N2BSJnr/me2-removebg-preview.png" alt="Raymond Husena"
+                        class="img-fluid rounded-circle mb-3" style="max-width: 200px;">
+                    <p class="m-2"><strong>Name:</strong> Raymond Husena</p>
+                    <p class="m-2"><strong>Age:</strong> 22</p>
+                    <p class="m-2"><strong>Address:</strong> Kalye, Kantuhan</p>
+                    <p class="m-2"><strong>Email:</strong> h.raymondhusena@gmail.com</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Second Code -->
-    <section id="skills-section" class="skills-section">
-        <div class="container">
-            <div class="skills-container">
-                <div class="skills-left">
-                    <h2>My Skills</h2>
-                    <p>Throughout my career, I've had the opportunity to work on a diverse range of projects, from small
-                        startups to large enterprises. I thrive on the challenge of transforming ideas into reality and
-                        take pride in delivering high-quality work that not only meets but exceeds client expectations.
-                        My skills encompass the entire design process, from research and wireframing to prototyping and
-                        user testing.</p>
-                    <div class="skill">
-                        <p>JavaScript</p>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 65%;"></div>
+                <!-- Textual Bio and Tabs -->
+                <div class="col-md-8">
+                    <div>
+                        <h5 class="mb-4">Raymond Husena</h5>
+                        <p>
+                            Hi, I'm Raymond Husena, a passionate and creative UI/UX Designer based in the Philippines.
+                            With a keen eye for detail and a deep understanding of user-centered design principles,
+                            I specialize in creating intuitive and visually appealing web and mobile interfaces.
+                            <br><br>
+                            Throughout my career, I've had the opportunity to work on a diverse range of projects,
+                            from small startups to large enterprises. I thrive on the challenge of transforming ideas
+                            into reality.
+                            <br><br>
+                            I am proficient in HTML, CSS, JavaScript, and various design tools, enabling me to create
+                            fully responsive and interactive designs.
+                            <br><br>
+                            If you're looking for a dedicated and versatile designer, let's create something amazing
+                            together!
+                        </p>
+
+                        <!-- Tab Navigation -->
+                        <div class="d-flex justify-content-start mb-3">
+                            <p class="tab-links active-link me-4" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links me-4" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
                         </div>
-                    </div>
-                    <div class="skill">
-                        <p>Php</p>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 70%;"></div>
+
+                        <!-- Tab Content: Skills -->
+                        <div class="tab-contents active-tab mb-4" id="skills">
+                            <ul>
+                                <li><span>&#10003;</span> User Interface (UI) Design</li>
+                                <li><span>&#10003;</span> User Experience (UX) Design</li>
+                                <li><span>&#10003;</span> Prototyping and Wireframing</li>
+                                <li><span>&#10003;</span> Usability Testing</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="skill">
-                        <p>Machine Learning</p>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 77%;"></div>
+
+                        <!-- Tab Content: Experience -->
+                        <div class="tab-contents mb-4" id="experience">
+                            <ul>
+                                <li><span>&#10003;</span> UI/UX Designer at Apple Inc.</li>
+                                <li><span>&#10003;</span> Front-End Developer at Amazon Web Services (AWS)</li>
+                                <li><span>&#10003;</span> Freelance Designer at Upwork</li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-                <div class="skills-right">
-                    <div class="stat">
-                        <h3><span class="count" data-count="10">0</span>+</h3>
-                        <p>Year Of Experience</p>
-                    </div>
-                    <div class="stat">
-                        <h3><span class="count" data-count="5689">0</span>+</h3>
-                        <p>Project Done</p>
-                    </div>
-                    <div class="stat">
-                        <h3><span class="count" data-count="5403">0</span>+</h3>
-                        <p>Satisfied Client</p>
-                    </div>
-                    <div class="stat">
-                        <h3><span class="count" data-count="99949">0</span>+</h3>
-                        <p>Certified Award</p>
+
+                        <!-- Tab Content: Education -->
+                        <div class="tab-contents mb-4" id="education">
+                            <ul>
+                                <li><span>&#10003;</span> Bachelor's Degree in Information Technology</li>
+                                <li><span>&#10003;</span> Certification in UI/UX Design</li>
+                                <li><span>&#10003;</span> Courses in Web Development and Graphic Design</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -770,7 +761,6 @@
             </div>
         </div>
     </section>
-
     <!-- Services Section -->
     <section id="services" class="py-5">
         <div class="container">
@@ -847,10 +837,9 @@
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="px-3">
-        <div class="container-contact ">
+        <div class="container-contact">
             <div class="contact-left">
                 <h1 class="sub-title">Contact Me</h1>
                 <p><i class="fas fa-paper-plane"></i>h.raymond3103@gmail.com</p>
@@ -872,6 +861,7 @@
             </div>
         </div>
     </section>
+
     <!-- Footer Section -->
     <footer>
         <div class="container">
@@ -879,25 +869,25 @@
         </div>
     </footer>
 
-
-    <script src="script.js"></script>
     <script>
         var tabLinks = document.getElementsByClassName("tab-links");
         var tabContents = document.getElementsByClassName("tab-contents");
 
         function opentab(tabname) {
-            for (tabLink of tabLinks) {
+
+            for (var tabLink of tabLinks) {
                 tabLink.classList.remove("active-link");
             }
-            for (tabContent of tabContents) {
+            for (var tabContent of tabContents) {
                 tabContent.classList.remove("active-tab");
             }
-            event.currentTarget.classList.add("active-link");
+
             document.getElementById(tabname).classList.add("active-tab");
+            event.target.classList.add("active-link");
         }
         document.addEventListener('DOMContentLoaded', () => {
             const counters = document.querySelectorAll('.count');
-            const speed = 10000; // Adjust speed as needed
+            const speed = 10000;
 
             counters.forEach(counter => {
                 const updateCount = () => {
