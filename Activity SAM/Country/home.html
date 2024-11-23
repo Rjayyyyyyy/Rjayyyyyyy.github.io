@@ -9,6 +9,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://i.ibb.co/GcQC8Gq/bca9708d6bd90be449b7e756cd7773fd-removebg-preview.png" type="image/png">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -190,9 +191,26 @@
         }
 
         #about img {
+            margin-top: 5%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 40%;
+            height: auto;
+        }
+
+        #about .arts-img {
+            width: 60%;
+            margin-top: 5%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+
+        #about .nature-img {
+            width: 60%;
+            margin-top: 5%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             height: auto;
         }
 
@@ -227,6 +245,61 @@
 
         #contact img:hover {
             transform: scale(1.1);
+        }
+
+        form {
+            margin-top: 18%;
+        }
+
+        .containerMap {
+            background: rgba(138, 133, 133, 0.338);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            left: 0;
+        }
+
+        iframe {
+            border: 0;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 100%;
+            height: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            iframe {
+                height: 300px;
+            }
+        }
+
+        .containerMap {
+            background: rgba(138, 133, 133, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        iframe {
+            border: 0;
+            border-radius: 8px;
+            width: 100%;
+            height: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -296,7 +369,8 @@
                         <img src="https://i.pinimg.com/564x/c6/b8/f7/c6b8f7dd12d783bf1fec6997dc3bcdfe.jpg"
                             class="card-img-top" alt="Siargao">
                         <div class="overlay">
-                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalSiargao"></a>
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal"
+                                data-bs-target="#modalSiargao"></a>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Siargao Island</h5>
@@ -309,7 +383,8 @@
                         <img src="https://i.pinimg.com/564x/6b/97/74/6b9774920b37a1d25b75df66c8794dbb.jpg"
                             class="card-img-top" alt="Boracay">
                         <div class="overlay">
-                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalBoracay"></a>
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal"
+                                data-bs-target="#modalBoracay"></a>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Boracay Island</h5>
@@ -322,7 +397,8 @@
                         <img src="https://i.pinimg.com/564x/27/8b/94/278b94203294f8eb10fa5db7aa888861.jpg"
                             class="card-img-top" alt="Palawan">
                         <div class="overlay">
-                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalPalawan"></a>
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal"
+                                data-bs-target="#modalPalawan"></a>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Palawan</h5>
@@ -335,7 +411,8 @@
                         <img src="https://i.pinimg.com/564x/df/51/29/df5129c0264a0de38e7811f07a27aefe.jpg"
                             class="card-img-top" alt="Cebu">
                         <div class="overlay">
-                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalCebu"></a>
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal"
+                                data-bs-target="#modalCebu"></a>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Cebu</h5>
@@ -348,7 +425,8 @@
                         <img src="https://i.pinimg.com/564x/c5/c6/df/c5c6df651d196c60863ac76624986792.jpg"
                             class="card-img-top" alt="Banaue Rice Terraces">
                         <div class="overlay">
-                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalBanaue"></a>
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal"
+                                data-bs-target="#modalBanaue"></a>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Banaue Rice Terraces</h5>
@@ -361,7 +439,8 @@
                         <img src="https://i.pinimg.com/564x/c0/de/3f/c0de3f0530f37ff696c09312e162e430.jpg"
                             class="card-img-top" alt="Chocolate Hills">
                         <div class="overlay">
-                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalChocolate"></a>
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal"
+                                data-bs-target="#modalChocolate"></a>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Chocolate Hills</h5>
@@ -374,7 +453,8 @@
                         <img src="https://i.pinimg.com/564x/81/53/a2/8153a247ee898a19c660316ed92b4ca6.jpg"
                             class="card-img-top" alt="Vigan">
                         <div class="overlay">
-                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalVigan"></a>
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal"
+                                data-bs-target="#modalVigan"></a>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Vigan</h5>
@@ -387,7 +467,8 @@
                         <img src="https://i.pinimg.com/564x/7a/8e/ee/7a8eee3d6d6d0ba61b11580094c90a3e.jpg"
                             class="card-img-top" alt="Mayon Volcano">
                         <div class="overlay">
-                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalMayon"></a>
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal"
+                                data-bs-target="#modalMayon"></a>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Mayon Volcano</h5>
@@ -400,7 +481,8 @@
                         <img src="https://i.pinimg.com/564x/57/b7/57/57b75708935d42726c1fc8dfafc21444.jpg"
                             class="card-img-top" alt="Tubbataha Reefs Natural Park">
                         <div class="overlay">
-                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal" data-bs-target="#modalTubbataha"></a>
+                            <a href="#" class="fa fa-external-link" data-bs-toggle="modal"
+                                data-bs-target="#modalTubbataha"></a>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Tubbataha Reefs Natural Park</h5>
@@ -605,7 +687,8 @@
                     <p>The Philippines is a beautiful archipelago in Southeast Asia, consisting of more than 7,000
                         islands. From the bustling capital city of Manila to the serene beaches of Palawan, the country
                         offers something for every traveler.</p>
-                    <a href="https://taasnoopilipino.com/7000-islands-and-counting-exploring-the-philippine-archipelago/" class="btn btn-primary mt-3">Learn More</a>
+                    <a href="https://taasnoopilipino.com/7000-islands-and-counting-exploring-the-philippine-archipelago/"
+                        class="btn btn-primary mt-3">Learn More</a>
                 </div>
                 <div class="col-md-6 text-center">
                     <img src="https://i.pinimg.com/736x/13/7e/db/137edbd33093c175e5ec0faf841be2d4.jpg" alt="Philippines"
@@ -620,7 +703,8 @@
                     <p>The country's landscapes are as diverse as its people. Visitors can explore the powdery white
                         sands of Boracay, the underground river in Puerto Princesa, and the stunning Banaue Rice
                         Terraces, a UNESCO World Heritage Site.</p>
-                    <a href="https://mytourguide.ph/philippine-destinations/top-natural-wonders-philippines/" class="btn btn-primary mt-3">Learn More</a>
+                    <a href="https://mytourguide.ph/philippine-destinations/top-natural-wonders-philippines/"
+                        class="btn btn-primary mt-3">Learn More</a>
                 </div>
                 <div class="col-md-6 text-center">
                     <img src="https://i.pinimg.com/736x/9c/42/0e/9c420efcc92b8318c78e5083f647e0fa.jpg" alt="Nature"
@@ -634,7 +718,8 @@
                     <h3>Rich Cultural Heritage</h3>
                     <p>Experience a fascinating blend of indigenous traditions and foreign influences that define the
                         Philippines' unique cultural identity.</p>
-                    <a href="https://www.re-thinkingthefuture.com/articles/intangible-cultural-heritage-of-the-philippines/" class="btn btn-primary mt-3">Learn More</a>
+                    <a href="https://www.re-thinkingthefuture.com/articles/intangible-cultural-heritage-of-the-philippines/"
+                        class="btn btn-primary mt-3">Learn More</a>
                 </div>
                 <div class="col-md-6 text-center">
                     <img src="https://i.pinimg.com/736x/b9/7b/e0/b97be01bf0243804704d0faef5a12983.jpg"
@@ -664,7 +749,8 @@
                     <p>The Philippines is a multilingual country with Filipino and English as its official languages.
                         Traditional art forms such as weaving, wood carving, and pottery remain part of the country’s
                         cultural identity.</p>
-                    <a href="https://en.wikipedia.org/wiki/Languages_of_the_Philippines" class="btn btn-primary mt-3">Learn More</a>
+                    <a href="https://en.wikipedia.org/wiki/Languages_of_the_Philippines"
+                        class="btn btn-primary mt-3">Learn More</a>
                 </div>
                 <div class="col-md-6 text-center">
                     <img src="https://i.pinimg.com/736x/25/13/88/2513886118fbbcca5bedbb40d69ed9b4.jpg"
@@ -716,6 +802,20 @@
                             <img src="https://img.icons8.com/color/48/twitter--v1.png" alt="Twitter" />
                         </a>
                     </div>
+
+                    <div class="container mt-4">
+                        <div class="text-center">
+                            <h4>Find Us on the Map</h4>
+                            <p>Explore the beauty of the Philippines on the map below.</p>
+                        </div>
+                        <div class="containerMap mx-auto">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15912437.737847974!2d116.82910997414843!3d12.879721027204616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x330032f8153e1c51%3A0x82b4f1e3a002b4af!2sPhilippines!5e0!3m2!1sen!2sph!4v1698932487475!5m2!1sen!2sph"
+                                allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
